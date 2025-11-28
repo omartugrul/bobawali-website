@@ -4,12 +4,8 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#menu', label: 'Menu' },
-  { href: '#clients', label: 'Clients' },
-  { href: '#features', label: 'News' },
-  { href: '#gallery', label: 'Gallery' },
+  { href: '#services', label: 'Events' },
+  { href: '#inquiry', label: 'Contact' },
 ]
 
 export default function Navbar() {

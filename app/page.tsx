@@ -1,13 +1,9 @@
 import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
 import {
-  AboutSection,
   ServicesSection,
-  MenuSection,
-  ClientsSection,
-  FeaturesSection,
-  GallerySection,
   InquirySection,
+  LogoCarousel,
 } from '@/components/sections'
 
 export default function Home() {
@@ -16,23 +12,11 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* About Section */}
-      <AboutSection />
+      {/* Social Proof - Logo Carousel */}
+      <LogoCarousel />
 
-      {/* Services Section */}
+      {/* Services/Event Types Section */}
       <ServicesSection />
-
-      {/* Menu Section */}
-      <MenuSection />
-
-      {/* Clients Section */}
-      <ClientsSection />
-
-      {/* News Features Section */}
-      <FeaturesSection />
-
-      {/* Gallery Section */}
-      <GallerySection />
 
       {/* Inquiry Section */}
       <InquirySection />
