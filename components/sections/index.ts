@@ -1,0 +1,7 @@
+export { default as AboutSection } from './AboutSection'
+export { default as ServicesSection } from './ServicesSection'
+export { default as MenuSection } from './MenuSection'
+export { default as ClientsSection } from './ClientsSection'
+export { default as FeaturesSection } from './FeaturesSection'
+export { default as GallerySection } from './GallerySection'
+export { default as InquirySection } from './InquirySection'
