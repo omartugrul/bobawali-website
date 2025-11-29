@@ -86,40 +86,40 @@ NEXT_PUBLIC_MENU_URL=<menu PDF URL>
 
 ## TODOs
 
-### Analytics & SEO (Phase 5)
+### High Priority - Visual Impact
+- [ ] Add photos to make the site feel more personal (hero image, mini gallery on homepage with link to full gallery page)
+- [ ] Hero section needs visual punch - add hero image (boba cup, event photo, or lifestyle shot), consider split layout
+
+### Medium Priority - Polish & Consistency
+- [ ] Standardize section heading sizes (ServicesSection and FeaturedInSection use smaller h2 than other sections)
+- [ ] Standardize section spacing - currently inconsistent (py-16 vs py-20 vs py-12). Create a spacing scale and apply consistently
+- [ ] Get fonts from the menu - consider replacing Inter with menu fonts for better brand cohesion
+- [ ] Improve cards & components - ServicesSection and FeaturedIn cards are plain. Add subtle gradients, glass effects, or better visual treatment
+
+### Lower Priority - Enhancements
+- [ ] Consider adding a testimonials section with quotes from past clients
+- [ ] Explore more motion and animations (micro-interactions, scroll effects, hover states)
+- [ ] Vary motion effects - currently all fade-in-up on scroll. Add staggered animations, subtle parallax, scroll-triggered effects
+- [ ] Add CTA variety - ghost buttons and styled text links for secondary actions
+
+### Later - Analytics & SEO
 - [ ] Integrate PostHog using env variables (`NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST`)
 - [ ] Wire up custom events for CTAs and Inquiry actions
-- [ ] Add meta tags and Open Graph tags
 - [ ] Add sitemap.xml and robots.txt
 - [ ] Performance & accessibility pass (lazy-load images, alt text)
 
-### Typography Cleanup
-- [ ] Standardize section heading sizes (ServicesSection and FeaturedInSection use smaller h2 than other sections)
-- [ ] Add base typography styles to globals.css using @apply for consistency
-- [ ] Decide on FeaturedIn mobile label style (currently subtle `text-xs text-text/50`, desktop uses full heading)
-- [ ] Get fonts from the menu - consider replacing Inter with menu fonts for better brand cohesion
+### Done
+- [x] Update hero section copy to be more compelling and pointed (headline, subheadline, CTA)
 
-### Current Typography Inconsistencies
+### Notes: Typography Inconsistencies
 - Most sections: `text-3xl md:text-4xl lg:text-5xl` for h2
 - ServicesSection: `text-2xl md:text-3xl lg:text-4xl` (smaller)
 - FeaturedInSection desktop: `text-2xl lg:text-3xl` (smaller)
 - FeaturedInSection mobile: `text-xs text-text/50` (intentionally subtle label)
-
-### Content
-- [ ] Update hero section copy to be more compelling and pointed (headline, subheadline, CTA)
-
-### Design & Motion
-- [ ] Explore more motion and animations to level up the feel of the website (micro-interactions, scroll effects, hover states)
-- [ ] Add photos to make the site feel more personal (hero image, mini gallery on homepage with link to full gallery page)
-- [ ] Consider adding a testimonials section with quotes from past clients
-- [ ] Hero section needs visual punch - add hero image (boba cup, event photo, or lifestyle shot), consider split layout
-- [ ] Vary motion effects - currently all fade-in-up on scroll. Add staggered animations, subtle parallax, scroll-triggered effects
-- [ ] Improve cards & components - ServicesSection and FeaturedIn cards are plain. Add subtle gradients, glass effects, or better visual treatment
-- [ ] Standardize section spacing - currently inconsistent (py-16 vs py-20 vs py-12). Create a spacing scale and apply consistently
-- [ ] Add CTA variety - primary pill buttons are good, but add ghost buttons and styled text links for secondary actions
 
 ## Time Log
 
 | Date | Time | Notes |
 |------|------|-------|
 | Friday, Nov 28, 2025 | 4pm - 8pm | Initial design review, added FeaturedInSection, shimmer effect, design TODOs |
+| Saturday, Nov 29, 2025 | 11:45am - ongoing | Updated hero copy, reorganized TODOs by priority |

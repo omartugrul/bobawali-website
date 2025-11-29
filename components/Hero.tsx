@@ -32,9 +32,8 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-tight mb-4">
-            Houston&apos;s South Asian Fusion{' '}
-            <span className="text-shimmer">Bubble Tea</span>{' '}
-            for Your Event
+            Your Event Deserves{' '}
+            <span className="text-shimmer">Better Boba</span>
           </h1>
 
           <motion.p
@@ -43,7 +42,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             className="text-base md:text-lg text-text/70 mb-6 max-w-xl mx-auto"
           >
-            Unique flavors like mango lassi boba, gulab jamun milk tea & falooda—halal-friendly, non-alcoholic drinks that make your event unforgettable.
+            We bring South Asian fusion drinks to Houston weddings, parties & corporate events. Non-alcoholic. Unforgettable.
           </motion.p>
 
           {/* CTA */}
