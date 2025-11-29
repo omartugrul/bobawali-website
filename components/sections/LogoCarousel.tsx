@@ -27,37 +27,43 @@ export default function LogoCarousel() {
       <motion.div
         className="flex gap-6 items-center"
         animate={{
-          x: [0, -50 * clients.length],
+          x: [0, -(100 + 24) * clients.length],
         }}
         transition={{
           x: {
             repeat: Infinity,
             repeatType: 'loop',
-            duration: 20,
+            duration: 25,
             ease: 'linear',
           },
         }}
       >
-        {duplicatedClients.map((client, index) => (
-          <div
-            key={`${client.id}-${index}`}
-            className="flex-shrink-0 h-16 flex items-center"
-          >
-            {client.logo ? (
-              <Image
-                src={client.logo}
-                alt={client.name}
-                width={150}
-                height={64}
-                className="h-14 w-auto object-contain max-w-[180px]"
-              />
-            ) : (
-              <span className="text-text/40 font-medium text-sm whitespace-nowrap">
-                {client.name}
-              </span>
-            )}
-          </div>
-        ))}
+        {duplicatedClients.map((client, index) => {
+          const isLarge = client.id === 'texas-halal-fest' || client.id === 'cars-n-chai'
+          const needsPadding = client.id === 'google'
+          return (
+            <div
+              key={`${client.id}-${index}`}
+              className={`flex-shrink-0 flex items-center justify-center ${
+                isLarge ? 'w-[160px] h-16' : 'w-[100px] h-12'
+              } ${needsPadding ? 'px-3' : ''}`}
+            >
+              {client.logo ? (
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={isLarge ? 160 : 100}
+                  height={isLarge ? 64 : 48}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <span className="text-text/40 font-medium text-sm whitespace-nowrap">
+                  {client.name}
+                </span>
+              )}
+            </div>
+          )
+        })}
       </motion.div>
 
       <motion.p
