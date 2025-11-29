@@ -19,3 +19,33 @@ body {
 body {
   @apply bg-bg text-text font-sans antialiased;
 }
+
+/* Animated shimmer gradient for text */
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #790000 0%,
+    #a83232 25%,
+    #C27013 50%,
+    #a83232 75%,
+    #790000 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(121, 0, 0, 0.3));
+}

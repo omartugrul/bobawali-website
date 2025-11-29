@@ -31,20 +31,9 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="text-center"
         >
-          {/* Location badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4"
-          >
-            <span className="w-2 h-2 bg-primary rounded-full" />
-            Houston, TX
-          </motion.div>
-
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-tight mb-4">
-            South Asian Fusion{' '}
-            <span className="text-primary">Bubble Tea</span>{' '}
+            Houston&apos;s South Asian Fusion{' '}
+            <span className="text-shimmer">Bubble Tea</span>{' '}
             for Your Event
           </h1>
 

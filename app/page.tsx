@@ -4,6 +4,7 @@ import {
   ServicesSection,
   InquirySection,
   LogoCarousel,
+  FeaturedInSection,
 } from '@/components/sections'
 
 export default function Home() {
@@ -14,6 +15,9 @@ export default function Home() {
 
       {/* Social Proof - Logo Carousel */}
       <LogoCarousel />
+
+      {/* Featured In - Press mentions */}
+      <FeaturedInSection />
 
       {/* Services/Event Types Section */}
       <ServicesSection />
