@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+
+const MENU_URL = process.env.NEXT_PUBLIC_MENU_URL || 'https://drive.google.com/file/d/1xVeqLmEDA5f0F1tLwyscPfAo7q4f8fPE/view'
 
 const navLinks = [
   { href: '#services', label: 'Events' },
@@ -62,6 +65,14 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
+            <Link
+              href={MENU_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text hover:text-primary transition-colors font-medium"
+            >
+              Menu
+            </Link>
             <button
               onClick={() => scrollToSection('#inquiry')}
               className="bg-primary hover:bg-primary/80 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 hover:shadow-lg"

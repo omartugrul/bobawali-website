@@ -45,6 +45,5 @@ export const featuredDrinks: Drink[] = [
 ]
 
 export const menuConfig = {
-  menuPosterUrl: '/our-drinks.png',
   fullMenuPdfUrl: '#', // Placeholder - update with actual menu PDF link
 }

@@ -1,6 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+
+const MENU_URL = process.env.NEXT_PUBLIC_MENU_URL || 'https://drive.google.com/file/d/1xVeqLmEDA5f0F1tLwyscPfAo7q4f8fPE/view'
 
 const eventTypes = [
   { icon: '💒', name: 'Weddings & Engagements', description: 'Mehndi nights, sangeets, receptions' },
@@ -73,6 +76,17 @@ export default function ServicesSection() {
           <p className="text-text/40 text-xs mt-3">
             We respond within 24 hours
           </p>
+          <Link
+            href={MENU_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-primary hover:text-primary/80 text-sm mt-4 transition-colors"
+          >
+            Curious about our drinks? View our menu
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
         </motion.div>
       </div>
     </section>
