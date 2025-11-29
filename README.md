@@ -9,7 +9,7 @@ Houston's first South Asian fusion bubble tea cart.
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Analytics**: PostHog
-- **Fonts**: Inter (body), Radicalls (display/logo)
+- **Fonts**: Inter (body/headings), Radicalls (display/logo)
 
 ## Getting Started
 
@@ -40,7 +40,6 @@ npm start
 │   ├── Navbar.tsx          # Navigation bar
 │   ├── Footer.tsx          # Footer
 │   └── sections/           # Page sections
-│       ├── ServicesSection.tsx
 │       ├── InquirySection.tsx
 │       ├── FeaturedInSection.tsx
 │       ├── LogoCarousel.tsx
@@ -74,6 +73,31 @@ npm start
 | `font-display` | Radicalls | Logo, brand headings |
 | `font-sans` | Inter | Body text, UI elements |
 
+### Switching to Raleway (Menu Font)
+To match the menu typography, you can switch from Inter to Raleway:
+
+1. **layout.tsx** - Change the import and config:
+```tsx
+import { Raleway } from 'next/font/google'
+const raleway = Raleway({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-raleway' })
+// Use raleway.variable in <html>
+```
+
+2. **tailwind.config.js** - Update font-sans:
+```js
+sans: ['var(--font-raleway)', 'Raleway', 'system-ui', 'sans-serif'],
+```
+
+3. **globals.css** - Optionally bump body weight:
+```css
+body { @apply font-medium; } /* Raleway 400 is thin, 500 looks better */
+```
+
+4. **Section headings** - Add uppercase styling:
+```tsx
+className="uppercase tracking-wide"
+```
+
 ## Environment Variables
 
 Create a `.env` file in the root directory:
@@ -89,14 +113,15 @@ NEXT_PUBLIC_MENU_URL=<menu PDF URL>
 ### High Priority - Visual Impact
 - [ ] Add photos to make the site feel more personal (hero image, mini gallery on homepage with link to full gallery page)
 - [ ] Hero section needs visual punch - add hero image (boba cup, event photo, or lifestyle shot), consider split layout
+  - ⏳ BLOCKED: Waiting on client for animated boba cup images
+  - Side task: Create master prompt to generate any boba cup image
 
 ### Medium Priority - Polish & Consistency
-- [ ] Standardize section heading sizes (ServicesSection and FeaturedInSection use smaller h2 than other sections)
 - [ ] Standardize section spacing - currently inconsistent (py-16 vs py-20 vs py-12). Create a spacing scale and apply consistently
-- [ ] Get fonts from the menu - consider replacing Inter with menu fonts for better brand cohesion
-- [ ] Improve cards & components - ServicesSection and FeaturedIn cards are plain. Add subtle gradients, glass effects, or better visual treatment
+- [ ] Improve FeaturedIn cards - currently plain. Add subtle gradients, glass effects, or better visual treatment
 
 ### Lower Priority - Enhancements
+- [ ] Reconsider the loading screen - the animated boba cup may not fit the current design direction
 - [ ] Consider adding a testimonials section with quotes from past clients
 - [ ] Explore more motion and animations (micro-interactions, scroll effects, hover states)
 - [ ] Vary motion effects - currently all fade-in-up on scroll. Add staggered animations, subtle parallax, scroll-triggered effects
@@ -110,16 +135,11 @@ NEXT_PUBLIC_MENU_URL=<menu PDF URL>
 
 ### Done
 - [x] Update hero section copy to be more compelling and pointed (headline, subheadline, CTA)
-
-### Notes: Typography Inconsistencies
-- Most sections: `text-3xl md:text-4xl lg:text-5xl` for h2
-- ServicesSection: `text-2xl md:text-3xl lg:text-4xl` (smaller)
-- FeaturedInSection desktop: `text-2xl lg:text-3xl` (smaller)
-- FeaturedInSection mobile: `text-xs text-text/50` (intentionally subtle label)
+- [x] Remove ServicesSection (redundant with hero copy), add one-liner to LogoCarousel
 
 ## Time Log
 
 | Date | Time | Notes |
 |------|------|-------|
 | Friday, Nov 28, 2025 | 4pm - 8pm | Initial design review, added FeaturedInSection, shimmer effect, design TODOs |
-| Saturday, Nov 29, 2025 | 11:45am - ongoing | Updated hero copy, reorganized TODOs by priority |
+| Saturday, Nov 29, 2025 | 11:45am - 12:45pm | Updated hero copy, removed ServicesSection, added one-liner to LogoCarousel, tried Raleway font (reverted to Inter), fixed mobile text wrapping |

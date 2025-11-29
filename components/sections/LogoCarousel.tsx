@@ -9,7 +9,7 @@ export default function LogoCarousel() {
   const duplicatedClients = [...clients, ...clients]
 
   return (
-    <section className="py-12 bg-white overflow-hidden relative">
+    <section className="py-12 bg-white overflow-hidden">
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -19,12 +19,14 @@ export default function LogoCarousel() {
         Trusted by amazing brands & organizations
       </motion.p>
 
-      {/* Gradient fades on edges - full screen width */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+      {/* Carousel container with gradient edges */}
+      <div className="relative">
+        {/* Gradient fades on edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-      {/* Scrolling logos */}
-      <motion.div
+        {/* Scrolling logos */}
+        <motion.div
         className="flex gap-6 items-center"
         animate={{
           x: [0, -(100 + 24) * clients.length],
@@ -64,16 +66,17 @@ export default function LogoCarousel() {
             </div>
           )
         })}
-      </motion.div>
+        </motion.div>
+      </div>
 
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="text-center text-text/40 text-xs mt-6"
+        className="text-center text-text/40 text-sm mt-6 px-4"
       >
-        and more...
+        From weddings, to festivals, to office parties... we've done it all.
       </motion.p>
     </section>
   )

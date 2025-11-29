@@ -1,7 +1,6 @@
 import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
 import {
-  ServicesSection,
   InquirySection,
   LogoCarousel,
   FeaturedInSection,
@@ -18,9 +17,6 @@ export default function Home() {
 
       {/* Featured In - Press mentions */}
       <FeaturedInSection />
-
-      {/* Services/Event Types Section */}
-      <ServicesSection />
 
       {/* Inquiry Section */}
       <InquirySection />

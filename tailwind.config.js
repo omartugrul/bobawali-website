@@ -18,7 +18,7 @@ module.exports = {
       },
       fontFamily: {
         display: ['Radicalls', 'cursive'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
