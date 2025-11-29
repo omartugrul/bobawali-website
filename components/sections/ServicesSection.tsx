@@ -6,12 +6,12 @@ import Link from 'next/link'
 const MENU_URL = process.env.NEXT_PUBLIC_MENU_URL || 'https://drive.google.com/file/d/1xVeqLmEDA5f0F1tLwyscPfAo7q4f8fPE/view'
 
 const eventTypes = [
-  { icon: '💒', name: 'Weddings & Engagements', description: 'Mehndi nights, sangeets, receptions' },
-  { icon: '🎂', name: 'Birthdays & Celebrations', description: 'Sweet 16s, graduations, baby showers' },
-  { icon: '🏢', name: 'Corporate Events', description: 'Team building, office parties, launches' },
-  { icon: '🎓', name: 'University Events', description: 'Cultural nights, org events, fundraisers' },
-  { icon: '🎪', name: 'Festivals & Markets', description: 'Pop-ups, food festivals, community events' },
-  { icon: '✨', name: 'Private Parties', description: 'House parties, get-togethers, iftars' },
+  { name: 'Weddings & Engagements', description: 'Mehndi nights, sangeets, receptions' },
+  { name: 'Birthdays & Celebrations', description: 'Sweet 16s, graduations, baby showers' },
+  { name: 'Corporate Events', description: 'Team building, office parties, launches' },
+  { name: 'University Events', description: 'Cultural nights, org events, fundraisers' },
+  { name: 'Festivals & Markets', description: 'Pop-ups, food festivals, community events' },
+  { name: 'Private Parties', description: 'House parties, get-togethers, iftars' },
 ]
 
 export default function ServicesSection() {
@@ -52,7 +52,6 @@ export default function ServicesSection() {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="bg-gradient-to-br from-bg to-white rounded-xl p-4 border border-primary/10 hover:border-primary/20 hover:shadow-md transition-all"
             >
-              <div className="text-2xl mb-2">{event.icon}</div>
               <h3 className="font-semibold text-text text-sm mb-1">{event.name}</h3>
               <p className="text-text/50 text-xs">{event.description}</p>
             </motion.div>
