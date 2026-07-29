@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { InstagramIcon } from '@/components/icons'
 import { GOOGLE_FORM_URL } from '@/content/links'
+import { trackEvent } from '@/lib/analytics'
 const INSTAGRAM_URL = 'https://www.instagram.com/bobawali.htx/'
 
 export default function InquirySection() {
@@ -43,6 +44,7 @@ export default function InquirySection() {
             href={GOOGLE_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('book_now_click', { location: 'inquiry_section' })}
             className="inline-block bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl shadow-lg shadow-primary/25"
           >
             Fill out this form
@@ -61,6 +63,7 @@ export default function InquirySection() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('social_click', { platform: 'instagram', location: 'inquiry_section' })}
             className="text-primary hover:text-primary/80 font-medium inline-flex items-center gap-1 transition-colors"
           >
             <InstagramIcon className="w-3.5 h-3.5" />

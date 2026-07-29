@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { drinkImages, menuConfig } from '@/content/menu'
 import Link from 'next/link'
 import DrinkCarousel from '@/components/DrinkCarousel'
+import { trackEvent } from '@/lib/analytics'
 
 export default function MenuSection() {
   return (
@@ -51,6 +52,7 @@ export default function MenuSection() {
             href={menuConfig.fullMenuPdfUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('menu_view_click')}
             className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-5 py-2.5 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-lg transition-all hover:scale-105 hover:shadow-xl shadow-lg"
           >
             View Full Menu

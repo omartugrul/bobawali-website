@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import { InstagramIcon } from '@/components/icons'
+import { trackEvent } from '@/lib/analytics'
 
 const socialLinks = [
   {
@@ -37,6 +40,7 @@ export default function Footer() {
             <p className="text-white/80 text-sm">Based in Houston, TX</p>
             <Link
               href="mailto:bobawali.htx@gmail.com"
+              onClick={() => trackEvent('email_click')}
               className="text-white/80 hover:text-white text-sm transition-colors"
             >
               bobawali.htx@gmail.com
@@ -51,6 +55,7 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('social_click', { platform: social.name.toLowerCase(), location: 'footer' })}
                 className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                 aria-label={social.name}
               >

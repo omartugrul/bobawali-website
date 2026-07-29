@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { GOOGLE_FORM_URL } from '@/content/links'
+import { trackEvent } from '@/lib/analytics'
 
 export default function HeroBackground() {
   return (
@@ -54,6 +55,7 @@ export default function HeroBackground() {
               href={GOOGLE_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('book_now_click', { location: 'hero' })}
               className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 hover:shadow-xl shadow-lg shadow-primary/25 text-lg"
             >
               Book Your Event
